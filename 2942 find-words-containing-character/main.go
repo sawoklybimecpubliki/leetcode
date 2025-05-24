@@ -2,15 +2,20 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func findWordsContaining(words []string, x byte) []int {
 	var out []int
 	for i, word := range words {
-		if strings.Contains(word, string(x)) {
-			out = append(out, i)
+		for _, letter := range word {
+			if x == byte(letter) {
+				out = append(out, i)
+				break
+			}
 		}
+		/*if strings.Contains(word, string(x)) {
+			out = append(out, i)
+		}*/
 	}
 	return out
 }
