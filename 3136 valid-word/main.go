@@ -34,5 +34,5 @@ func isConstant(char rune) bool {
 }
 
 func main() {
-	fmt.Println(isValid("UuE6"))
+	fmt.Println(isValid("asdada1212a"))
 }
