@@ -35,7 +35,6 @@ func permutations(permut []int, nums []int, result *[][]int) {
 }
 
 func main() {
-	// с помощью рекурсии переходя по массиву in range
 	nums := []int{1, 2, 3, 4}
 	var out [][]int
 	for i := 0; i < len(nums); i++ {
@@ -46,25 +45,4 @@ func main() {
 	fmt.Println("len = ", len(out))
 	fmt.Println("n = ", factorial(len(nums)))
 	fmt.Println(out)
-	/*
-		for i := 0; i < len(nums); i++ {
-			tmpSlice := make([]int, len(nums), cap(nums))
-			copy(tmpSlice, nums)
-			out = append(out, tmpSlice)
-
-			for numIndex := len(nums) - 2; numIndex > 0; numIndex-- {
-				tmpSlice := make([]int, len(nums), cap(nums))
-				copy(tmpSlice, nums)
-				reverse(nums[numIndex:])
-				fmt.Println("first: ", nums)
-				//fmt.Printf("address of slice nums %p \n", &nums)
-				//fmt.Printf("address of slice tmp %p \n", &tmpSlice)
-				copy(tmpSlice, nums)
-				out = append(out, tmpSlice)
-				reverse(nums[numIndex:])
-				fmt.Println("second: ", nums)
-			}
-
-			reverse(nums[:])
-		}*/
 }

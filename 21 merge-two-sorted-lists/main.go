@@ -53,31 +53,3 @@ func main() {
 		fmt.Println(i.Val)
 	}
 }
-
-/*pointer := list1
-
-for i := 1; i < len(arr1); i++ {
-	pointer.Next = &ListNode{Val: arr1[i], Next: nil}
-	pointer = pointer.Next
-}*/
-
-/*solution 1
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-    var outList = &ListNode{}
-	pointer := outList
-	for list1 != nil || list2 != nil {
-		if list1 != nil && (list2 == nil || list1.Val < list2.Val) {
-			node := &ListNode{list1.Val, nil}
-			pointer.Next = node
-			pointer = pointer.Next
-			list1 = list1.Next
-		} else {
-			node := &ListNode{list2.Val, nil}
-			pointer.Next = node
-			pointer = pointer.Next
-			list2 = list2.Next
-		}
-	}
-	return outList.Next
-}
-*/

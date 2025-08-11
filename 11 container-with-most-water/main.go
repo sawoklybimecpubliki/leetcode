@@ -1,7 +1,8 @@
 package main
 
-func main() {
-	height := []int{8, 7, 2, 1}
+import "fmt"
+
+func maxArea(height []int) int {
 	var maxHeight, square int
 
 	for i := len(height) - 1; i > 0; i-- {
@@ -27,5 +28,9 @@ func main() {
 		}
 
 	}
-	println(square)
+	return square
+}
+
+func main() {
+	fmt.Println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
 }
