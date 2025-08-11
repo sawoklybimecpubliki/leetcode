@@ -4,14 +4,11 @@ import (
 	"fmt"
 )
 
-func main() {
-	s := "anagram"
-	t := "nagaram"
+func isAnagram(s string, t string) bool {
 	letterS := make(map[uint8]int)
 	letterT := make(map[uint8]int)
 	if len(s) != len(t) {
-		fmt.Printf("len stirngs does not match")
-		return
+		return false
 	}
 	for i := 0; i < len(s); i++ {
 		fmt.Println(s[i])
@@ -20,10 +17,12 @@ func main() {
 	}
 	for i := 0; i < len(s); i++ {
 		if letterS[s[i]] != letterT[s[i]] {
-			fmt.Printf("letters do not match")
-			return
+			return false
 		}
 	}
-	fmt.Printf("letters match")
-	return
+	return true
+}
+
+func main() {
+	fmt.Println(isAnagram("anagram", "nagaram"))
 }
